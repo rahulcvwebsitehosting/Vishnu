@@ -2,6 +2,19 @@
   "name": "vinu's-igloo---the-legend-of-west-mambalam",
   "private": true,
   "version": "0.0.0",
+  "description": "The official website for Vinu's Igloo, Chennai's legendary ice cream shop famous for its iconic ₹2 softy. Features the dynamic menu, store locations, rich history, and direct WhatsApp/Email inquiry portals.",
+  "keywords": [
+    "vinus-igloo",
+    "ice-cream-shop",
+    "chennai",
+    "west-mambalam",
+    "react-app",
+    "vite-project",
+    "typescript",
+    "tailwind-css",
+    "motion-react",
+    "nostalgic-branding"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
