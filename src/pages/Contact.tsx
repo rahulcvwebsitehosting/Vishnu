@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, Send, MessageCircle } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
+import { motion } from 'motion/react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +54,11 @@ const Contact: React.FC = () => {
     <div className="pt-24 pb-20 bg-brand-cream min-h-screen">
       <div className="container mx-auto px-4">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl"
+        >
           
           {/* Info Side */}
           <div className="bg-brand-dark p-10 text-white flex flex-col justify-between relative overflow-hidden">
@@ -93,7 +98,11 @@ const Contact: React.FC = () => {
           {/* Form Side */}
           <div className="p-10">
             {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center animate-pulse">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="h-full flex flex-col items-center justify-center text-center animate-pulse"
+              >
                 <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
                   <Send size={24} />
                 </div>
@@ -105,10 +114,14 @@ const Contact: React.FC = () => {
                 >
                   Send another enquiry
                 </button>
-              </div>
+              </motion.div>
             ) : (
               <form onSubmit={handleWhatsAppSubmit} className="space-y-6">
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 }}
+                >
                   <label className="block text-sm font-bold text-gray-700 mb-2">Your Name</label>
                   <input 
                     type="text" 
@@ -118,8 +131,12 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={e => setFormData({...formData, name: e.target.value})}
                   />
-                </div>
-                <div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
                   <label className="block text-sm font-bold text-gray-700 mb-2">Phone Number</label>
                   <input 
                     type="tel" 
@@ -129,8 +146,12 @@ const Contact: React.FC = () => {
                     value={formData.phone}
                     onChange={e => setFormData({...formData, phone: e.target.value})}
                   />
-                </div>
-                <div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
                   <label className="block text-sm font-bold text-gray-700 mb-2">Event Type</label>
                   <select 
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 outline-none transition-all bg-white"
@@ -143,8 +164,12 @@ const Contact: React.FC = () => {
                     <option>Corporate Event</option>
                     <option>Other</option>
                   </select>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
                   <label className="block text-sm font-bold text-gray-700 mb-2">Message (Est. Quantity)</label>
                   <textarea 
                     rows={4}
@@ -154,9 +179,14 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={e => setFormData({...formData, message: e.target.value})}
                   ></textarea>
-                </div>
+                </motion.div>
                 
-                <div className="space-y-3 pt-2">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="space-y-3 pt-2"
+                >
                   <button 
                     type="submit" 
                     className="w-full bg-[#25D366] text-white font-bold py-4 rounded-xl hover:bg-[#128C7E] transition-all shadow-lg shadow-green-500/30 flex items-center justify-center gap-2"
@@ -177,12 +207,12 @@ const Contact: React.FC = () => {
                     <Mail size={18} />
                     Send via Email App
                   </button>
-                </div>
+                </motion.div>
               </form>
             )}
           </div>
 
-        </div>
+        </motion.div>
       </div>
     </div>
   );

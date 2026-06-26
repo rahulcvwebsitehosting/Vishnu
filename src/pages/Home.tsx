@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, MapPin, Clock } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { MENU_ITEMS, YOUTUBE_FEATURES } from '../constants';
 
 const Home: React.FC = () => {
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
               <div className="mt-8 flex items-center gap-4 text-sm text-gray-500 font-medium">
                 <div className="flex -space-x-2">
                   {[1,2,3,4].map(i => (
-                    <img key={i} src={`https://picsum.photos/50/50?random=${i}`} alt="User" className="w-8 h-8 rounded-full border-2 border-white" />
+                    <img key={i} src={`https://picsum.photos/seed/user${i}/50/50`} alt="User" className="w-8 h-8 rounded-full border-2 border-white" referrerPolicy="no-referrer" />
                   ))}
                 </div>
                 <p>Loved by 10,000+ happy customers</p>
@@ -68,9 +68,10 @@ const Home: React.FC = () => {
             >
               <div className="relative z-10 animate-float">
                 <img 
-                  src="https://picsum.photos/600/600" 
+                  src="https://picsum.photos/seed/igloo-hero/600/600" 
                   alt="Vinu's Igloo Famous Softy" 
                   className="w-full max-w-[500px] mx-auto rounded-[3rem] shadow-2xl rotate-3 border-4 border-white"
+                  referrerPolicy="no-referrer"
                 />
                 {/* Floating Badge */}
                 <div className="absolute top-10 -right-4 bg-yellow-400 text-brand-dark font-bold p-4 rounded-full shadow-lg h-24 w-24 flex items-center justify-center text-center leading-tight rotate-12 transform hover:scale-110 transition-transform cursor-pointer">

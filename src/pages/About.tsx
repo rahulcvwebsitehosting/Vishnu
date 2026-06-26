@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 const About: React.FC = () => {
   return (
@@ -27,9 +27,10 @@ const About: React.FC = () => {
             className="relative"
           >
             <img 
-              src="https://picsum.photos/600/800" 
+              src="https://picsum.photos/seed/igloo-old/600/800" 
               alt="Shop Old Photo" 
               className="rounded-3xl shadow-2xl rotate-2 border-8 border-white"
+              referrerPolicy="no-referrer"
             />
             <div className="absolute -bottom-10 -right-10 bg-brand-yellow p-8 rounded-full shadow-xl hidden md:block">
               <p className="font-display text-3xl font-bold text-brand-dark">25+</p>

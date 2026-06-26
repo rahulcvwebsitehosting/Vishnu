@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { MENU_ITEMS } from '../constants';
 import { Filter } from 'lucide-react';
 
@@ -54,7 +54,7 @@ const Menu: React.FC = () => {
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {filteredItems.map((item) => (
               <motion.div
                 layout
@@ -70,6 +70,7 @@ const Menu: React.FC = () => {
                     src={item.image} 
                     alt={item.name} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
                   />
                   {item.isBestseller && (
                     <div className="absolute top-3 left-3 bg-brand-yellow text-brand-dark text-[10px] font-bold px-2 py-1 rounded shadow-sm uppercase tracking-wide">
